@@ -8,8 +8,11 @@ import java.security.Principal;
 public class BasePrincipals implements Principal {
     protected String name;
 
+    public BasePrincipals(String name) {
+        this.name = name;
+    }
     public BasePrincipals(JsonObject jsonObject) {
-        this.name = jsonObject.getString("name");
+        this(jsonObject.getString("name"));
     }
 
     @Override
